@@ -1,31 +1,37 @@
 #include <stdio.h>
-/**
- * main - function that checks for uppercase character.
- * Return: 0
- */
-int main(void)
-{
-	int h = 1;
+#include "main.h"
 
-	while (h <= 100)
+/**
+*print_triangle - prints a triangle
+*@size:size parameter of triangle
+*Return: returns nothing
+*/
+
+void print_triangle(int size)
+{
+	int inc1, inc2;
+
+	if (size > 0)
 	{
-		if (h % 3 == 0 && h % 5 == 0)
-			printf("FizzBuzz ");
-		else if (h % 5 == 0)
+		for (inc1 = 1; inc1 <= size; inc1++)
 		{
-			if (h == 100)
+			for ((inc2 = size - inc1); inc2 > 0; inc2--)
 			{
-				printf("Buzz");
-				printf("\n");
+				putchar(' ');
 			}
-			else
-				printf("Buzz ");
+
+			for (inc2 = 0; inc2 < inc1; inc2++)
+			{
+				putchar('#');
+			}
+
+			if (inc1 == size)
+			{
+				continue;
+			}
+
+			putchar('\n');
 		}
-		else if (h % 3 == 0)
-			printf("Fizz ");
-		else
-			printf("%d ", h);
-	h++;
 	}
-return (0);
+	putchar('\n');
 }
