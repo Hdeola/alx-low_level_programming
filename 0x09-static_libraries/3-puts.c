@@ -1,16 +1,19 @@
 #include "main.h"
 
 /**
-*swap_int - swaps two integers' values
-*@a: first integer
-*@b: second integer
-*Return: returns nothing
+ * _puts - prints a string, followed by a newline to stdout
+ *
+ * @str: string parameter to print
+ *
+ * Return: Nothing
 */
 
-void swap_int(int *a, int *b)
+void _puts(char *str)
 {
-	int tmp = *a;
-
-	*a = *b;
-	*b = tmp;
+	while (*str != '\0')
+	{
+		_putchar(*str + 0);
+		++str;
+	}
+	_putchar('\n');
 }
